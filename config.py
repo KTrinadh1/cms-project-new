@@ -4,7 +4,8 @@ from urllib.parse import quote_plus
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config(object):
-    SECRET_KEY = os.environ.get('SECRET_KEY') 
+    SECRET_KEY = os.environ.get('SECRET_KEY', 'local_dev_secret_key')
+
     BLOB_ACCOUNT = os.environ.get('BLOB_ACCOUNT') or 'images654'
     BLOB_STORAGE_KEY = os.environ.get('BLOB_STORAGE_KEY') 
     BLOB_CONTAINER = os.environ.get('BLOB_CONTAINER') or 'image'
